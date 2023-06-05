@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Add App</title>
+		<style>
+			* { font-size:50px; }
+			body { background-color: rgb(244, 207, 107);}
+		</style>
+		<script>
+			function compute() 
+			{
+				event.preventDefault();
+
+				let name = document.getElementById("name");
+				let msg = document.getElementById("msg");
+
+                if(num1.value == "")
+                {
+                    alert("The Number 1 cannot be empty");
+                    msg.innerHTML = "";
+                    num1.focus();
+                    return;
+                }
+
+                if(num2.value == "")
+                {
+                    alert("The Number 2 cannot be empty");
+                    msg.innerHTML = "";
+                    num2.focus();
+                    return;
+                }
+
+
+
+                let ans = parseFloat(num1.value) + parseFloat(num2.value);
+                let res = "Addn = " + ans.toFixed(2);
+                msg.innerHTML = ans;
+
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+		<h1>Chai App</h1>
+		<form onsubmit = "compute()">
+			<input type = "number" step = "any" placeholder = "Enter 1st number" id = "num1">
+			<br><br>
+            <input type = "number" step = "any" placeholder = "Enter 2nd number" id = "num2">
+            <br>
+			<input type = "submit" value = "Add">
+			<br><br>
+			<h1 id = "msg"> </h1>
+		</form>
+		</center>
+	</body>
+<html>
